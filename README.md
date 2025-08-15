@@ -39,7 +39,7 @@ Langchain/
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/username/Langchain.git
+git clone https://github.com/shivtchandr/Langchain.git
 cd Langchain
 npm install
 ```
