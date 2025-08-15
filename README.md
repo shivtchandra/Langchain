@@ -1,82 +1,92 @@
 # Langchain
 
-I built this project to explore and implement a lightweight LangChain-inspired system with both a backend agent and a simple offline debugging interface. It is designed to run locally, without relying on external cloud dependencies, while still being flexible enough to integrate with APIs or expand into more advanced AI workflows.
+This project implements a basic LangChain-powered application with a Node.js backend and a React-based **Offline Debugger** for testing and development.
+It demonstrates how to set up an agent, expose it through an API, and provide a local interface for debugging.
 
-## Project Structure
+---
+
+## **Project Structure**
 
 ```
 Langchain/
 │
-├── node_modules/          # Installed dependencies
-│
-├── Offline_debugger/      # React-based offline debugging tool
-│   ├── index.html         # Root HTML file for the debugger UI
+├── node_modules/            # Project dependencies
+├── Offline_debugger/        # React-based debugger UI
+│   ├── index.html
 │   └── src/
-│       ├── App.css        # Styles for the main app component
-│       ├── App.jsx        # Core React component for the debugger
-│       ├── index.css      # Global styles
-│       └── main.jsx       # Entry point for the React app
+│       ├── App.css
+│       ├── App.jsx
+│       ├── index.css
+│       └── main.jsx
 │
-├── agent.js               # Core agent logic for handling requests and responses
-├── package-lock.json      # Auto-generated dependency lock file
-├── package.json           # Project metadata and scripts
-├── server.js              # Backend server handling API routes and agent execution
+├── agent.js                 # Core agent logic
+├── server.js                # Node.js server entry point
+├── package.json             # Project metadata and dependencies
+├── package-lock.json        # Dependency lock file
 ```
-
-## How It Works
-
-* **agent.js**
-  This file contains the logic for my AI agent — it processes incoming prompts, interacts with the necessary functions or models, and returns results. I designed it so that it can be run standalone or connected to the server for API access.
-
-* **server.js**
-  This runs a local HTTP server. It routes incoming requests to the agent and returns the processed responses. This setup allows me to test the system in a browser or through API calls.
-
-* **Offline\_debugger**
-  This is a separate React application that serves as a front-end testing and debugging tool. It lets me run prompts and view agent responses in a clean, interactive UI without needing a full cloud setup.
-
-## Getting Started
-
-1. **Install Dependencies**
-   From the project root:
-
-   ```bash
-   npm install
-   ```
-
-2. **Run the Backend Server**
-
-   ```bash
-   node server.js
-   ```
-
-   This will start the local API server (default port can be set in the code).
-
-3. **Run the Offline Debugger**
-
-   ```bash
-   cd Offline_debugger
-   npm install
-   npm run dev
-   ```
-
-   Then open the provided local URL in a browser (usually `http://localhost:5173/`).
-
-## Why I Built It
-
-I wanted a modular setup where:
-
-* The **agent logic** is independent and reusable.
-* The **server** acts as a lightweight API layer.
-* The **offline debugger** provides a quick way to test without deploying.
-
-This approach lets me experiment with prompt processing, API integrations, and UI features in a controlled local environment.
-
-## Next Steps
-
-* Add more tools and chains to the agent for complex workflows.
-* Integrate authentication for secure API endpoints.
-* Improve the debugger UI with request history and export options.
 
 ---
 
-If you want, I can now extend this by adding **a section showing how a request flows from the debugger → server.js → agent.js → back to debugger**, so it reads like a full technical walkthrough. Would you like me to do that?
+## **Prerequisites**
+
+* **Node.js** v16 or higher (v18+ recommended)
+* **npm** (comes with Node.js) or Yarn
+
+---
+
+## **Installation**
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/username/Langchain.git
+cd Langchain
+npm install
+```
+
+---
+
+## **Running the Server**
+
+Start the backend server:
+
+```bash
+node server.js
+```
+
+By default, the server will start locally (port configuration may be defined inside `server.js`).
+You can access the API endpoints exposed by the agent from your browser or API client.
+
+---
+
+## **Running the Offline Debugger**
+
+The Offline Debugger is a local UI for testing the agent without external dependencies.
+
+```bash
+cd Offline_debugger
+npm install
+npm run dev
+```
+
+This will start a local development server (usually on `http://localhost:5173/`).
+Open the URL in your browser to interact with the agent visually.
+
+---
+
+## **Key Files**
+
+* **`agent.js`** — Contains the main agent logic, including how prompts are processed and responses are generated.
+* **`server.js`** — Sets up the HTTP server, routes requests, and connects to the agent.
+* **`Offline_debugger/src/`** — React front-end for testing and debugging agent interactions.
+
+---
+
+## **Development Notes**
+
+* **Customizing Agent Behavior:** Modify `agent.js` to change prompt handling, chain configuration, or API calls.
+* **Server Configuration:** Adjust port or route handling in `server.js` as needed.
+* **UI Changes:** Update `App.jsx` and related CSS files in the `Offline_debugger` folder for front-end modifications.
+
+---
+
