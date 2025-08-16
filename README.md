@@ -1,6 +1,7 @@
 # Langchain
 
 This project implements a basic LangChain-powered application with a Node.js backend and a React-based **Offline Debugger** for testing and development.
+It can also convert the given code from one language to another and one can make that choice by clicking on the drop down box .
 It demonstrates how to set up an agent, expose it through an API, and provide a local interface for debugging.
 
 ---
